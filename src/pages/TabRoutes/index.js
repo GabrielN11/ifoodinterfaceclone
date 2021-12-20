@@ -5,7 +5,8 @@ import Order from '../Order'
 import Search from '../Search'
 import User from '../User'
 import { Feather } from '@expo/vector-icons';
-import { View, StatusBar } from 'react-native';
+import { View} from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
@@ -35,6 +36,7 @@ const tabs = [
 const index = () => {
   return (
     <View style={{ flex: 1, marginTop: StatusBar.currentHeight }}>
+      <StatusBar backgroundColor="#fefefe"/>
       <Tab.Navigator>
         {tabs.map(tab => (
           <Tab.Screen key={tab.name} name={tab.name} component={tab.component} options={{

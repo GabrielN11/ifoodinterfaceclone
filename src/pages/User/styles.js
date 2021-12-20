@@ -40,3 +40,35 @@ export const UserText = styled.Text`
     font-size: 18px;
     max-width: 60%;
 `
+
+export const MenuView = styled.ScrollView`
+    border-top-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    margin-top: 10px;
+    width: 100%;
+`
+
+export const MenuItemView = styled.TouchableOpacity`
+    flex-direction: row;
+    align-items: center;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    padding: 15px 5px;
+    height: 75px;
+`
+
+export const NameText = styled.Text`
+    font-size: 18px;
+    color: #000;
+`
+
+export const DescriptionText = styled.Text`
+    color: grey;
+`
+
+export const InfoView = styled.View`
+    margin-right: auto;
+    margin-left: 10px;
+`
