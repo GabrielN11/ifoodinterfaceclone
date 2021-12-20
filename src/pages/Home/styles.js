@@ -111,7 +111,7 @@ export const RestaurantView = styled.View`
     flex-direction: column;
 `
 
-export const RestaurantItemView = styled.TouchableOpacity`
+export const RestaurantItemView = styled.View`
     flex-direction: row;
     align-items: center;
     height: 80px;
@@ -122,6 +122,7 @@ export const RestaurantImage = styled.Image`
     width: 70px;
     height: 70px;
     border-radius: ${() => 70/2 + 'px'};
+    margin-right: 10px;
 `
 
 export const RestaurantInfoView = styled.View`

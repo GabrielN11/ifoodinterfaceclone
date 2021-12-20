@@ -5,8 +5,7 @@ import Order from '../Order'
 import Search from '../Search'
 import User from '../User'
 import { Feather } from '@expo/vector-icons';
-import { View} from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import { View, StatusBar} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
