@@ -3,6 +3,7 @@ import { View, Text, ScrollView } from 'react-native'
 import { InputCancel, SearchCategoryView, SearchInput, TextInputView } from './styles'
 import { CategoryImage, CategoryItem, SubtitleText } from '../Home/styles'
 import RestaurantItem from '../Home/RestaurantItem'
+import Loading from '../Loading'
 
 
 const index = () => {
@@ -25,12 +26,12 @@ const index = () => {
 
     async function searchRestaurants(){
         const restaurants = await (await fetch('http://my-json-server.typicode.com/pablohdev/app-ifood-clone/restaurantes')).json()
-        const result = restaurants.filter(restaurant => restaurant.nome.includes(search))
+        const result = restaurants.filter(restaurant => restaurant.nome.toLowerCase().includes(search))
         setRestaurants(result)
     }
 
     function updateSearch({ nativeEvent: { eventCount, target, text} }){
-        setSearch(text)
+        setSearch(text.toLowerCase())
         searchRestaurants()
     }
 
@@ -56,6 +57,7 @@ const index = () => {
                             <Text>{category.nome}</Text>
                         </CategoryItem>
                     ))}
+                    {!loaded && <Loading/>}
                 </SearchCategoryView>
             </ScrollView>}
             {search.length > 0 && <View style={{margin: 15}}>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import qrCodeImg from '../../assets/img/Qrcode.jpeg'
+import Loading from '../Loading'
 import Banners from './Banners'
 import Categories from './Categories'
 import Restaurants from './Restaurants'
@@ -36,6 +37,7 @@ const index = () => {
                 <SubtitleText>Lojas</SubtitleText>
                 <Restaurants restaurants={restaurants}/>
             </>}
+            {!loaded && <Loading/>}
         </HomeView>
     )
 }
